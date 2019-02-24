@@ -1,0 +1,27 @@
+[org.gnome.gedit.preferences.editor]
+create-backup-copy=false
+
+[org.gnome.desktop.interface]
+cursor-theme='DMZ-White'
+gtk-key-theme='Default'
+gtk-theme='Xenta-Y'
+icon-theme='Xenta-X'
+menus-have-icons=true
+toolkit-accessibility=false
+font-name="Noto Sans 9"
+monospace-font-name="Monospace 10"
+document-font-name="Noto Sans 10"
+
+[org.gnome.settings-daemon.plugins.xsettings]
+hinting="slight"
+
+[org.gnome.desktop.wm.preferences]
+theme='Xenta-Y'
+titlebar-font='Noto Sans Bold 10'
+button-layout=':minimize,maximize,close'
+
+[org.gnome.desktop.background]
+show-desktop-icons=false
+
+[org.gnome.metacity]
+theme='Xenta-Y'

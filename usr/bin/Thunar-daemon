@@ -1,0 +1,5 @@
+#!/bin/bash
+sleep 5
+killall Thunar
+exec Thunar --daemon
+exit 0

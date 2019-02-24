@@ -1,0 +1,118 @@
+#!/bin/bash
+file=$2
+name=$1
+#################################################
+#       Translations
+        ###### Default = English #####
+	question="Do you want to unmount ISO mount?"
+        question1="Do you want to mount $name?"
+        text="ISO file has been unmounted successfully"
+	text1="ISO file has been mounted successfully"
+	text2="MountISO"
+	error="Error Window"
+	error1="Canceled by user"
+	error2="ISO file $name doesn't exist"
+case $LANG in
+	######## german ########
+	de* )
+	question="Wollen Sie unmounten ISO mounten?"
+        question1="Wollen Sie mount $name?"
+        text="ISO-Datei wurde nicht gefasst erfolgreich"
+	text1="ISO-Datei wurde erfolgreich montiert"
+	text2="MountISO"
+	error="Fehler Fenster"
+	error1="Abgebrochene von einem Benutzer"
+	error2="ISO-Datei $name ist nicht vorhanden";;
+	######## Japanese by blowback ########
+	ja* )
+	question="マウントされているISOファイルをアンマウントしますか?"
+        question1="$name をマウントしますか?"
+        text="ISOファイルは正常にアンマウントされました"
+	text1="ISOファイルは正常にマウントされました"
+	text2="MountISO"
+	error="エラーウィンドウ"
+	error1="キャンセルされました"
+	error2="ISOファイル $name が存在しません";;
+	######## Swedish by Zwopper ########
+	sv* )
+	question="Vill du avmontera den valda the ISO-filen?"
+        question1="Vill du montera $name?"
+        text="ISO-filen monterades"
+	text1="ISO-filen avmonterades"
+	text2="Montera ISO"
+	error="Feldialog"
+	error1="Avbrutet av användaren"
+	error2="ISO-filen $name finns inte";;
+        ###### Catalan by wuying_ren #####
+	ca* )
+	question="Voleu desmuntar el fitxer ISO que hi ha muntat?"
+        question1="Voleu muntar $name?"
+        text="El fitxer ISO s'ha desmuntat amb èxit"
+	text1="El fitxer ISO s'ha muntat amb èxit"
+	text2="MountISO"
+	error="Finestra d'error"
+	error1="Cancel·lat per l'usuari"
+	error2="El fitxer ISO $name no existeix";;
+        ###### ITALIAN by diego1188 #####
+	it* )
+	question="Vuoi smontare il file ISO montato?"
+        question1="Vuoi montare $name?"
+        text="Il file ISO è stato smontato con successo"
+	text1="Il file ISO è stato montato con successo"
+	text2="MountISO"
+	error="Finestra di errore"
+	error1="Annullato dall'utente"
+	error2="Il file ISO $name non esiste";;
+        ###### Portuguese(pt_PT) by sergio marques #####
+	pt_PT* )
+	question="Deseja desmontar o ISO montado?"
+        question1="Deseja montar $name?"
+        text="O ficheiro ISO foi desmontado com sucesso"
+	text1="O ficheiro ISO foi montado com sucesso"
+	text2="Montar ISO"
+	error="Janela de erros"
+	error1="Cancelado pelo utilizador"
+	error2="O ficheiro ISO $name não existe";;
+        ###### Portuguese(Brazilian) by sergio marques #####
+	pt_BR* )
+	question="Você quer desmontar a ISO?"
+        question1="Você quer montar o arquivo $name?"
+        text="O arquivo ISO foi desmontado com sucesso"
+	text1="O arquivo ISO foi montado com sucesso"
+	text2="MountISO"
+	error="Janela de Erro"
+	error1="Cancelado pelo usuário"
+	error2="O arquivo $name não existe"
+esac
+#################################################
+## Check if ISO is mounted
+#################
+if [ -d "/mnt/$file/" ]; then
+	zenity  --question --title="$text2          " --text="$question        "
+ case $? in
+                 0)
+	gksudo umount "/mnt/$file/"
+	gksudo rmdir "/mnt/$file/"
+	zenity --title="$text2        " --info --text="$text          " ;;
+                1)
+                        zenity  --error --title="$error        " --text="$error1         " ;;   
+
+esac             
+else
+if [ -e "$1" ]; then
+	zenity  --question --title="$text2         " --text="$question1           "
+ case $? in
+                 0)
+		gksudo "mkdir '/mnt/$file/'"
+		gksudo "mount -o loop -t iso9660 '$name' '/mnt/$file/'"
+		thunar "/mnt/$file/"
+         	zenity --title="$text2        " --info --text="$text1          " ;;
+	
+                 1)
+                        zenity --error --title="$error       " --text="$error1         " ;;
+esac
+	else
+			zenity --title="$error         " --error="$error2        " 
+
+	fi
+fi

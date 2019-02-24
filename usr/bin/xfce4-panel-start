@@ -1,0 +1,5 @@
+#!/bin/bash
+sleep 5
+killall xfce4-panel
+exec xfce4-panel
+exit 0

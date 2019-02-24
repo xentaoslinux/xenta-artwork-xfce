@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ -x /usr/bin/catfish ]; then
+	/usr/bin/catfish --path=$HOME
+elif [ -x  /usr/bin/tracker-search-tool ]; then
+	 /usr/bin/tracker-search-tool
+elif [ -x  /usr/bin/gnome-search-tool ]; then
+	 /usr/bin/gnome-search-tool
+else
+	zenity --info --title="No Search Tool found" --text="Install catfish or tracker"	
+fi

@@ -1,0 +1,293 @@
+#!/bin/bash
+#
+#
+# sha256sum-xenta 0.2 created by shane <xentaos.com> based sha256sum-mint
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  
+# USA
+# dependencies
+#	bash
+#       zenity
+
+################################################
+#		TRANSLATIONS
+#-----------------------------------------------
+#	Default = English
+		title="SHA256 Checksum                     "
+		title1="SHA256 Checksum - Select a file    "
+		title2="SHA256 Checksum - Error            "
+		text1="Select a file	"
+		text2="Calculating SHA256 Checksum...  	 "
+		text3="SHA256 Checksum aborted	"
+		text4="The SHA256 Checksum is:	"
+		text5="The sha256sum file is:	"
+		text6="<b>Select the actions you wish to perform</b>	"
+		error1="You do not have read permission	"
+		error2="You do not have write permission	"
+		error3="No action selected. Exiting.	"
+		action0="Action	"
+		action1="Display the calculated sha256sum	"
+		action2="Save the sha256sum to a file	"
+case $LANG in
+	######## Japanese by blowback ########
+	ja* )
+		title="SHA256チェックサム                     "
+		title1="SHA256チェックサム - ファイルの選択    "
+		title2="SHA256チェックサム - エラー           "
+		text1="ファイルの選択	"
+		text2="SHA256チェックサムを計算しています...   	"
+		text3="SHA256チェックサムが中止されました	"
+		text4="SHA256チェックサム:	"
+		text5="sha256sumファイル:	"
+		text6="<b>実行したいアクションを選んでください</b>	"
+		error1="読み込み権がありません	"
+		error2="書き込み権がありません	"
+		error3="アクションが選択されていません。終了します。	"
+		action0="アクション	"
+		action1="計算したsha256sumを表示	"
+		action2="sha256sumをファイルに保存	";;
+	######## Swedish by Zwopper ########
+	sv* )
+		title="SHA256 Kontrollsumma                     "
+		title1="SHA256-Kontrollsumma - Välj en fil    "
+		title2="SHA256-Kontrollsumma - Fel            "
+		text1="Välj en fil"
+		text2="Beräknar SHA256-Kontrollsumma...  	 "
+		text3="SHA256-Kontrollsumma avbruten	"
+		text4="SHA256-Kontrollsumma är:	"
+		text5="SHA256-Kontrollsumme-filen är:	"
+		text6="<b>Välj vad du vill göra</b>	"
+		error1="Du har inte rätt att läsa filen	"
+		error2="YDu har inte rätt att skriva filen	"
+		error3="Inget val gjort. Avslutar.	"
+		action0="Val	"
+		action1="Visa den beräknade SHA256-Kontrollsumman	"
+		action2="Spara SHA256-Kontrollsumman till en fil	";;
+        ###### Catalan by wuying_ren #####
+	ca* )
+		title="Comprovació SHA256                     "
+		title1="Comprovació SHA256 - Seleccioneu un fitxer    "
+		title2="Comprovació SHA256 - Error            "
+		text1="Seleccioneu un fitxer	   "
+		text2="Calculant la suma SHA256...	   "
+		text3="Comprovació SHA256 avortada	   "
+		text4="La suma SHA256 és:	"
+		text5="El fitxer sha256sum és:	"
+		text6="<b>Seleccioneu les accions que voleu portar a terme</b>	"
+		error1="No teniu permís de lectura	"
+		error2="No teniu permís d'escriptura	"
+		error3="Cap acció seleccionada. Sortint.	"
+		action0="Acció"
+		action1="Mostra la suma sha256sum calculada	"
+		action2="Desa la suma sha256sum a un fitxer	";;
+        ###### ITALIAN by diego1188 #####
+	it* )
+		title="Somma SHA256                    "
+		title1="Somma SHA256 - Seleziona un file    "
+		title2="Somma SHA256 - Errore            "
+		text1="Seleziona un file"
+		text2="Calcolo della somma SHA256...   "
+		text3="Somma SHA256 annullata	"
+		text4="La somma SHA256 è:	"
+		text5="Il file sha256sum è:	"
+		text6="<b>Seleziona le azioni che vuoi compiere</b>	"
+		error1="Non hai il permesso di lettura		"
+		error2="Non hai il permesso di scrittura	"
+		error3="Nessuna azione selezionata. Uscita.	"
+		action0="Azione"
+		action1="Mostra il file sha256sum calcolato	"
+		action2="Save il file sha256sum	";;
+        ###### Portuguese(pt_PT) by sergio marques #####
+	pt_PT* )
+		title="SHA256 Checksum                     "
+		title1="SHA256 Checksum - Seleccione um ficheiro    "
+		title2="SHA256 Checksum - Erro            "
+		text1="Seleccione um ficheiro"
+		text2="Calculando SHA256 Checksum...	  "
+		text3="SHA256 Checksum abortado "
+		text4="O SHA256 Checksum é:	"
+		text5="O ficheiro sha256sum é:	"
+		text6="<b>Seleccione as acções a executar</b>	"
+		error1="Não tem permissões de leitura	"
+		error2="Não tem permissões de escrita	"
+		error3="Nenhuma acção seleccionada. Saindo.      "
+		action0="Acção"
+		action1="Apresenta o sha256sum calculado	"
+		action2="Gravar sha256sum para um ficheiro	";;
+        ###### Portuguese(Brazilian) by sergio marques #####
+	pt_BR* )
+		title="Verificador SHA256                    "
+		title1="Verificador SHA256 - Selecione um arquivo    "
+		title2="Verificador SHA256 - Erro            "
+		text1="Selecione um arquivo"
+		text2="Gerando verificador SHA256...      "
+		text3="A geração do verificador SHA256foi abortada	"
+		text4="O Verificador SHA256 é:	"
+		text5="O arquivo sha256sum é:	"
+		text6="<b>Selecione as ações que quer executar</b>	"
+		error1="Você não possui permissão de leitura	"
+		error2="Você não possui permissão de escrita	"
+		error3="Nenhuma ação selecionada. Saindo.	"
+		action0="Ação"
+		action1="Mostrar o verificador sha256sum gerado	"
+		action2="Salvar o verificador sha256sum em um arquivo    "
+esac
+################################################
+
+#Check if running under X
+xcheck=`tty | cut -d '/' -f3`
+if [ $xcheck != "pts" ]
+then
+	echo "Error: sha256sum-xenta must be run under X"
+	exit 1
+fi
+
+#If no file is selected
+if [ -z "$1" ]
+then
+	cd $HOME
+	input=$(zenity --file-selection --title="$title1")
+else
+#If a file is selected
+	if [ -f "$1" ]
+	then
+		input="$1"
+	else
+#If a directory is selected
+		cd "$1"
+		input=$(zenity --file-selection --title="$title1")
+	fi
+fi
+
+#If still no file is selected (operation cancelled)
+if [ -z "$input" ]
+then
+	exit 1
+fi
+
+#Check read permissions for input file
+if [ ! -r "$input" ]
+then
+	zenity --error --title="$title" --text "<b>$input:</b>
+
+$error1"
+	exit 2
+fi
+
+#Get location and filename from input
+wdir=`dirname "$input"`
+file=`basename "$input"`
+
+#cd into directory
+cd "$wdir"
+
+#debug
+#zenity --info --text "Debug:
+#dir is $wdir
+#file is $file"
+
+#Actions selection dialog
+action=$(zenity --list --title="$title	" --text "$text6" --checklist --column "" --column "$action0" TRUE "$action1" FALSE "$action2" --separator=":")
+
+#debug
+#zenity --info --text "Debug:
+#$action ."
+
+#If no action selected
+if [ -z "$action" ]
+then
+	zenity --error --title="$title2" --text "$error3"
+	exit 3
+fi
+
+#Check if saving to file is selected
+if [ "$action" != "$action1" ]
+then
+
+#Check write permission to directory
+	if [ ! -w "$wdir" ]
+	then
+		zenity --error --title="$title2" --text "<b>$wdir:</b>
+
+$error2"
+		exit 4
+	fi
+fi
+
+#debug
+#zenity --info --text "Debug:
+#$action"
+
+#Calculate sha256sum, progress dialog and output to file
+sha256sum "$file" | tee >(cut -d ' ' -f1 > /tmp/sum) | (zenity --progress --title="$title" --pulsate --auto-kill --auto-close --text "$text2") 
+
+#Find the zenity progress dialog
+running=`ps aux | grep "$text2" | sed '/grep/ d'`
+
+#Loop while progress dialog is running
+until [ -z "$running" ]
+do
+	sleep 1
+	running=`ps aux | grep "$text2" | sed '/grep/ d'`
+done
+
+#Check if sha256sum is still running after zenity dialog has closed
+
+sum=`cat /tmp/sum`
+rm /tmp/sum
+
+#debug
+#zenity --info --text "Debug:
+#$sum"
+
+#Completed successfully! Now for the final actions!
+
+#action for display and save
+if [ "$action" = "$action1:$action2" ]
+then
+	rm "$file".sha256sum
+	echo $sum > "$file".sha256sum
+	zenity --info --title="$title" --text "<b>$file:</b>
+
+$text4
+<b>$sum</b>
+
+$text5
+<b>$file.sha256sum</b>"
+	exit
+fi
+
+#action for display only
+if [ "$action" = "$action1" ]
+then
+	zenity --info --title="$title" --text "<b>$file:</b>
+
+$text4
+<b>$sum</b>"
+	exit
+fi
+
+#action for save only
+if [ "$action" = "$action2" ]
+then
+	rm "$file".sha256sum
+	echo $sum > "$file".sha256sum
+	zenity --info --title="$title" --text "<b>$file:</b>
+
+$text5
+<b>$file.sha256sum</b>"
+	exit
+fi
+killall sha256sum
+exit

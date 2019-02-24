@@ -1,0 +1,133 @@
+#!/bin/bash
+file="$*"
+echo "$file"
+ICONPATH="/usr/share/icons/gnome/scalable/actions/edit-delete-symbolic.svg" 
+#################################################
+#       Translations
+        ###### Default = English #####
+	title="Permanently Remove...	"
+	title1="Removing items			"
+        question="Do you wish to permanently remove the selected item(s)?"
+	error="ERROR WINDOW		"
+	error1="Nothing was selected"
+	error2="Nothing was permanently removed"
+	error3="That cannot be removed!         "
+case $LANG in
+	######## Japanese by blowback ########
+	ja* )
+	title="完全に削除...	"
+	title1="削除するアイテム		"
+        question="選択したファイルをゴミ箱に移動するのではなく、完全に削除しますか?"
+	error="エラーウィンドウ 		"
+	error1="何も選択されていません"
+	error2="何も削除されませんでした"
+	error3="それは削除できません!          ";;
+	######## Swedish by Zwopper ########
+	sv* )
+	title="Följande filer kommer att tas bort permanent...	"
+	title1="Tar bort filer					"
+        question="Vill du ta bort markerade fil(er) permanent?"
+	error="FELDIALOG		"
+	error1="Inget markerades	"
+	error2="Inget togs bort permanent	"
+	error3="Kan inte tas bort!          ";;
+	######## Polish by szamot83 ########
+	pl* )
+	title="Usuwanie całkowite...	"
+	title1="Usuwanie...			"
+        question="Czy na pewno chcesz usunąć całkowicie wybrany/e element/y?"
+	error="Okno błędu		"
+	error1="Nic nie zaznaczono"
+	error2="Nic nie zostało całkowicie usunięte"
+	error3="To nie może zostać usunięte!         ";;
+	######## Korean by JuEUS-U ########
+	ko* )
+	title="완전히 제거...	"
+	title1="항목 제거중			"
+        question="선택된 항목(들)을 완전히 제거하시겠습니까?"
+	error="에러 창		"
+	error1="아무것도 선택되지 않았습니다"
+	error2="아무것도 제거되지 않았습니다."
+	error3="제거될 수 없습니다!         ";;
+	######## German by fireice-LLH ########
+	de* )
+	title="Dauerhaft entfernen...	"
+	title1="Objekte entfernen			"
+        question="Ausgewählte(s) Objekt(e) dauerhaft entfernen?"
+	error="FEHLER FENSTER		"
+	error1="Es wurde nichts ausgewählt"
+	error2="Es wurde nichts dauerhaft entfernt"
+	error3="Konnte nicht entfernt werden!         ";;
+	######## Portuguese(pt_BR) by Rob Brill ########
+	pt_BR* )
+	title="Remover permanentemente...	"
+	title1="Removendo itens			"
+        question="Deseja remover permanentemente o item(s)selecionado(s)?"
+	error="JANELA DE ERRO		"
+	error1="Nada foi selecionado"
+	error2="Nothing was permanently removed"
+	error3="Isso não pode ser removido!         ";;
+	######## Portuguese(pt_PT) by sergio marques ########
+	pt_PT* )
+	title="Remover Permanentemente...	"
+	title1="Removendo itens			"
+        question="Deseja remover permanentemente o(s) item(s) seleccionados?"
+	error="JANELA DE ERRO		"
+	error1="Nenhum item seleccionado"
+	error2="Nada foi removido permanentemente"
+	error3="Não pode ser removido!         ";;
+	######## Italian by diego1188 ########
+	it* )
+	title="Rimuovi Definitivamente...	"
+	title1="Elementi in corso di rimozione		"
+        question="Vuoi rimuovere definitivamente l'elemento/i selezionato/i?"
+	error="FINESTRA DI ERRORE		"
+	error1="Non è stato selezionato nulla"
+	error2="Non è stato rimosso definitivamente nulla"
+	error3="Questo non può essere rimosso!         ";;
+	######## Catalan by wuying_ren ########
+	ca* )
+	title="Permanently Remove...	"
+	title1="Removing items			"
+        question="Do you wish to permanently remove the selected item(s)?"
+	error="ERROR WINDOW		"
+	error1="Nothing was selected"
+	error2="Nothing was permanently removed"
+	error3="That cannot be removed!         "
+esac
+#################################################
+#	You can't remove 
+check_dirs="/ /bin /boot /cdrom /dev /etc /lib /lost+found /media /mnt /opt /proc /root /sbin /srv /sys /usr /temp /var /usr/bin /usr/sbin /usr/include /usr/lib /usr/lib32 /usr/lib64 /usr/local /usr/share /user/src /usr/X11R6 $HOME"
+for test_dir in $check_dirs
+do 
+if [ "$file" = "$test_dir" ]; then
+	zenity --error --title="$error	" --text="<b>$error3</b>		"
+	exit
+fi done
+#################################################
+# 	Check for file(s) and folder(s) to delete
+if [ "$file" = "" ]; then
+	zenity --error --title="$error	" --text="<b>$error1</b>		"
+	exit
+else
+	zenity --question --title="$title" --window-icon="$ICONPATH" --text="<b>$question
+</b>"
+	case $? in
+                 0) ans="true"
+                        
+			;;
+                 1)
+			exit
+  	 		;;
+esac
+fi
+
+if [ "$ans" = true ]; then
+	 rm -rf "$file" | tee | sleep 3 |(zenity --title="$title	" --progress --pulsate --auto-kill --auto-close --text "<b>$title1		</b>" )
+fi 
+
+check_remove="$file"
+if [ -f "$check_remove" ] || [ -d "$check_remove" ]; then
+	zenity --error --title="$error	" --text="<b>$error2		</b>"
+	exit
+fi

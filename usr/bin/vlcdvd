@@ -1,0 +1,83 @@
+#! /bin/sh
+
+#Variables
+
+#/Variables
+
+#Function
+
+vlccd() {
+grep 'cd' /etc/mtab | cut -d ' ' -f1 | while read device
+do
+   echo "Device found at $device"
+grep 'cd' /etc/mtab | cut -d ' ' -f2 | while read line
+do
+   echo "Device found at $line"
+#DVDs
+   if [ -d "$line"/VIDEO_TS ]
+   then
+      echo "DVD found at $line/VIDEO_TS/"
+      echo "Playing DVD with vlc dvd://$line"
+      vlc dvd://$line
+      exit
+#VCDs
+   elif [ -d "$line"/MPEGAV ]
+   then
+      echo "VCD found at $device"
+      echo "Playing VCD with vlc vcd://$device"
+      vlc vcd://$device
+      exit
+   elif [ -d "$line"/mpegav ]
+   then
+      echo "VCD found at $device"
+      echo "Playing VCD with vlc vcd://$device"
+      vlc vcd://$device
+      exit
+   else
+      echo "Drive not found"
+   fi
+done
+done
+}
+
+vlcsr() {
+grep 'sr' /etc/mtab | cut -d ' ' -f1 | while read devices
+do
+	echo "Device found at $devices"
+grep 'sr' /etc/mtab | cut -d ' ' -f2 | while read lines
+do
+	echo "Device found at $lines"
+#DVDs
+   if [ -d "$lines"/VIDEO_TS ]
+   then
+      echo "DVD found at $lines/VIDEO_TS/"
+      echo "Playing DVD with vlc dvd://$lines"
+      vlc dvd://$lines
+      exit
+#VCDs
+   elif [ -d "$lines"/MPEGAV ]
+   then
+      echo "VCD found at $devices"
+      echo "Playing VCD with vlc vcd://$devices"
+      vlc vcd://$devices
+      exit
+   elif [ -d "$lines"/mpegav ]
+   then
+      echo "VCD found at $devices"
+      echo "Playing VCD with vlc vcd://$devices"
+      vlc vcd://$devices
+      exit
+   else
+      echo "Drive not found"
+   fi
+done
+done
+}
+test=grep 'cd' /etc/mtab | cut -d ' ' -f1
+if [ "$test" != "" ]; then
+	vlccd
+else
+	vlcsr
+fi
+
+

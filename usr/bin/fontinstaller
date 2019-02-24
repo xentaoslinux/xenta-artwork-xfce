@@ -1,0 +1,508 @@
+#!/bin/bash
+#
+#
+# TTF installer 0.2 created by merlwiz79 <linuxmint.com>
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  
+# USA
+# dependencies
+#	bash
+#       zenity
+#
+# Post Translations at http://forums.linuxmint.com/viewtopic.php?p=120385#p120385
+set -x
+
+version="0.3"
+#################################################
+## File and Extra Values
+file=$1
+font=$2
+WD=440
+HT=120
+ic=/usr/share/icons/gnome/scalable/apps/fonts.svg
+check_dirs="alee arhangai arphic baekmuk beteckna dustin fifthhorseman freefont fontinstaller kiloji kochi konatu latex-xft-fonts mikachan mona openoffice sazanami sjfonts thai ttf-ancient-scripts ttf-arabeyes ttf-atarismall ttf-bengali-fonts ttf-bitstream-vera ttf-bpg-georgian ttf-breip ttf-dejavu ttf-devanagari-fonts ttf-dzongkha ttf-ecolier-court ttf-ecolier-lignes-court ttf-essays ttf-f500 ttf-farsiweb ttf-freefarsi ttf-georgewilliams ttf-gfs-artemisia ttf-gfs-bodoni-classic ttf-gfs-complutum ttf-gfs-didot-classic ttf-gfs-gazis ttf-gfs-neohellenic ttf-gfs-solomos ttf-gfs-theokritos ttf-gujarati-fonts ttf-inconsolata ttf-indic-fonts-core ttf-junicode ttf-kacst ttf-kannada-fonts ttf-khmeros ttf-lao ttf-larabie-deco ttf-larabie-straight ttf-larabie-uncommon ttf-liberation ttf-malayalam-fonts ttf-manchufont ttf-marvosym ttf-mgopen ttf-mph-2b-damase ttf-nafees ttf-ocr-a ttf-oflb-euterpe ttf-oriya-fonts ttf-paktype ttf-punjabi-fonts ttf-radisnoir ttf-sil-abyssinica ttf-sil-andika ttf-sil-charis ttf-sil-doulos ttf-sil-ezra ttf-sil-gentium ttf-sil-padauk ttf-sil-scheherazade ttf-sil-yi ttf-summersby ttf-tamil-fonts ttf-telugu-fonts ttf-tmuni ttf-tuffy ttf-ubuntu-title ttf-xfree86-nonfree ttf-xfree86-nonfree-syriac unfonts uralic vlgothic wqy *"
+
+#################################################
+#               Translations
+                ###### Default = English #####
+	        title1="How do you want to install the font?"
+		text="The file must have at least read only Permissions!   "
+		system="System" 
+		user="User"
+		title2="Warning!                            "
+		text1="Installing to the system installs to all users.        "
+		title2="User Installation                       "
+		text2="Installing to the current user.      "
+		question="Do you wish to continue?          "
+		done="Installation is complete.            "
+		done1="Please restart applications to use the font. "
+		error="Error!                                "
+		error1="$font is already installed.         "
+		error2="Installation of the font was canceled by user!"
+		error3="The font was not installed! Please check the file Permissions!!"
+		error4="No file was selected!                   " 
+		select="Select"
+		type="Installation type"
+case $LANG in
+	######## German by timh ########
+	de* )
+		title1="Wie soll die Schrift installiert werden?"
+		text="The font was not installed! Please check the file Permissions!   "
+		system="System" 
+		user="Benutzer"
+		title2="Warnung!                             "
+		text1="Systemweite Einrichtung installiert dies für alle Benutzer.         "
+		title2="Benutzer-Einrichtung                       "
+		text2="Installiert für den aktuellen Benutzer.      "
+		question="Jetzt fortfahren?                 "
+		done="Einrichtung beendet.            "
+		done1="Bitte Neustart der Applikationen zum Benutzen der Schriftart. "
+		error="Fehler!                                "
+		error1="$font ist schon installiert.         "
+		error2="Die Einrichtung der Schriftart wurde vom Benutzer abgebrochen!"
+		error3="Die Schrift wurde nicht installiert! Bitte die Zugriffsrechte der Datei kontrollieren!!"
+		error4="Es wurde keine Datei ausgewählt!                   " 
+		select="Wähle aus"
+		type="Einrichtungstyp";;
+	######## Swedish by Zwopper ########
+	sv* )
+		title1="Hur vill du installera typsnitten?"
+		text="Filen måste som minst ha läsrättigheter! "
+		system="Systemnivå" 
+		user="Användarnivå"
+		title2="Varning!                            "
+		text1="Installation på systemnivå gör typsnitten tillgängliga för alla användare.        "
+		title2="Installation på användarnivå                       "
+		text2="Installerar till nuvarande användare.      "
+		question="Vill du fortsätta?                 "
+		done="Installationen är klar.            "
+		done1="Du måste starta om öppna program för att använda de ska kunna använda de nya typsnitten. "
+		error="Fel!                                "
+		error1="$font är redan installerat.         "
+		error2="Installationen av typsnitt avbröts av användaren!"
+		error3="Typsnittet installerades inte! Kontrollera att namnet inte innehåller något mellanslag."
+		error4="Ingen fil valdes!                   " 
+		select="Välj"
+		type="Installationstyp";;
+        ###### Italian by Nikotra #####
+	it* )
+		title1="Come vuoi installare il font?"
+		text="Il nome del file non deve avere spazi!   "
+		system="Sistema" 
+		user="Utente"
+		title2="Attenzione!                            "
+		text1="Installandoli nel sistema si installeranno per tutti gli utenti.        "
+		title2="Installa per l'utente                       "
+		text2="Installa per l'utente corrente.      "
+		question="Desideri continuare?           "
+		done="Installazione completata.            "
+		done1="Riavvia le applicazioni per usare il font. "
+		error="Errore!                                "
+		error1="$font è già installato.         "
+		error2="L'installazione del font è stata cancellata dall'utente!"
+		error3="Il font non è stato installato! Controlla gli spazi nel nome."
+		error4="Nessun file è stato selezionato!                   " 
+		select="Seleziona"
+		type="Tipo d'installazione";;
+        ###### Czech by xxxmerlin #####
+	cs* )
+		title1="Jak chcete nainstalovat písmo?"
+		text="Jméno souboru nesmí obsahovat mezery!   "
+		system="Systém" 
+		user="Uživatel"
+		title2="Varování!                            "
+		text1="Instalovat do systémové instalace pro všechny uživatele.        "
+		title2="Uživatelská instalace                       "
+		text2="Instalovat pro současného uživatele.      "
+		question="Chcete pokračovat?          "
+		done="Instalace dokončena.            "
+		done1="Pro používání písma musíte restartovat aplikaci. "
+		error="Chyba!                                "
+		error1="$font je již nainstalován.         "
+		error2="Instalace písma byla zrušena uživatelem!"
+		error3="Písmo nebylo nainstalováno! Zkontrolujte, zda jeho jméno neobsahuje žádné mezery."
+		error4="Nebyl vybrán soubor!                   " 
+		select="Vybrat"
+		type="Typ instalace";;
+        ###### Spanish by DaniFP #####
+	es* )
+		title1="¿Cómo desea instalar la fuente?"
+		text="¡El nombre del fichero no debe tener ningún espacio!   "
+		system="Sistema" 
+		user="Usuario"
+		title2="¡Atención!                            "
+		text1="La instalación para el sistema, instala para todos los usuarios.        "
+		title2="Instalación para el usuario                       "
+		text2="Instala para el usuario actual.      "
+		question="¿Desea continuar?          "
+		done="Instalación completada.            "
+		done1="Debe reiniciar las aplicaciones con las que quiera usar esta fuente. "
+		error="¡Error!                                "
+		error1="$font ya está instalada.         "
+		error2="¡La instalación de la fuente ha sido cancelada por el usuario!"
+		error3="¡No se ha instalado la fuente! Compruebe que no haya espacios en el nombre."
+		error4="¡No ha seleccionado ningún fichero!                   " 
+		select="Seleccionar"
+		type="Tipo de instalación";;
+        ###### Bulgarian by emil_pavlov #####
+	bg* )
+		title1="Как желаете да бъде инсталиран шрифтът?"
+		text="Имената на файловете не могат да съдържат интервали!   "
+		system="Система" 
+		user="Потребител"
+		title2="Предупреждение!                            "
+		text1="При инсталирането за цялата система шрифтът ще бъде инсталиран за всички потребители.        "
+		title2="Лични инсталиране                      "
+		text2="Инсталиране за текущия потребител.      "
+		question="Желаете ли да продължите?          "
+		done="Инсталирането е приключено.            "
+		done1="Моля, рестартирайте приложението, за да използвате шрифта. "
+		error="Грешка!                                "
+		error1="Шрифтът $font вече е инсталиран.           "
+		error2="Инсталирането на шрифта е прекъснато от потребителя!"
+		error3="Шрифтът не е инсталиран! Моля, проверете за интервали в името."
+		error4="Няма избран файл!                   " 
+		select="Избиране"
+		type="Вид на инсталирането";;
+        ###### Slovak by Xgamer #####
+	sk* )
+		title1="Ako chcete inštalovať písmo?"
+		text="Názov súboru nemôže obsahovať medzery!   "
+		system="Systém" 
+		user="Užívateľ"
+		title2="Upozornenie!                            "
+		text1="Inštalovať do systému pre všetkých užívateľov.        "
+		title2="Užívateľská inštalácia                       "
+		text2="Inštalovanie pre terajšieho užívateľa.      "
+		question="Prajete si pokračovať?            "
+		done="Inštalácia dokončená.            "
+		done1="Prosím reštartujte aplikáciu k použitiu nového písma. "
+		error="Chyba!                                "
+		error1="$font je už inštalované.         "
+		error2="Inštalácia písma bola prerušené užívateľom!"
+		error3="Písmo nebolo nainštalované.Skontrolujte medzery v názve."
+		error4="Žiaden vybratý súbor!                   " 
+		select="Vybrať"
+		type="Typ inštalácie";;
+        ###### French by Nival #####
+	fr* )
+		title1="Comment voulez-vous installer la police ?"
+		text="Le nom de fichier ne doit pas contenir d'espaces !   "
+		system="Système" 
+		user="Utilisateur"
+		title2="Attention !                            "
+		text1="Installer pour le système installe la police pour tous les utilisateurs.        "
+		title2="Installation utilisateur                       "
+		text2="Installer pour l'utilisateur actuel.      "
+		question="Voulez-vous continuer ?         "
+		done="Installation terminée.            "
+		done1="Relancez l'application pour pouvoir utiliser la police. "
+		error="Erreur !                                "
+		error1="$font est déjà installée.         "
+		error2="L'installation de la police a été annulée par l'utilisateur!"
+		error3="Il font non è stato installato! Controlla gli spazi nel nome."
+		error4="Nessun file è stato selezionato!                  " 
+		select="Seleziona"
+		type="Tipo d'installazione";;
+        ###### Turkish by eren #####
+	tr* )
+		title1="Font'u nasıl kurmak istersiniz?"
+		text="Dosya isminde boşluk olmamalı!   "
+		system="Sistem" 
+		user="Kullanıcı"
+		title2="Uyarı!                            "
+		text1="Sisteme kurulum tüm kullanıcılara kurulum yapar.        "
+		title2="Kullanıcı Kurulumu                       "
+		text2="Şu anki kullanıcı için kuruluyoru.      "
+		question="Devam etmek istiyor musunuz?          "
+		done="Kurulum tamamlandı.            "
+		done1="Fontu kullanmak için lütfen uygulamaları yeniden başlatın. "
+		error="Hata!                                "
+		error1="$font zaten kurulu.         "
+		error2="Fontun kurulumu kullanıcı tarafından iptal edildi!"
+		error3="Fon kurulmadı! Lütfen isimde boşluk var mı diye kontrol edin."
+		error4="Bir dosya seçilmedi!                   " 
+		select="Seç"
+		type="Kurulum tipi";;
+        ###### Russian by sdemchenko #####
+	ru* )
+		title1="Как вы хотите установить шрифт?"
+		text="Имя файла не должно содержать пробелов!   "
+		system="Система" 
+		user="Пользователь"
+		title2="Внимание!                            "
+		text1="Установка в систему устанавливает для всех пользователей.        "
+		title2="Установка для пользователя                       "
+		text2="Установка для текущего пользователя.      "
+		question="Хотите продолжить?          "
+		done="Установка завершена.            "
+		done1="Пожалуйста, перезапустите приложения, чтобы использовать шрифт. "
+		error="Ошибка!                                "
+		error1="$font уже установлен.           "
+		error2="Установка шрифта была отменена пользователем!"
+		error3="Шрифт не был установлен! Пожалуйста, проверьте имя файла на наличие пробелов."
+		error4="Файл не выбран!                     " 
+		select="Выбрать"
+		type="Тип установки";;
+        ###### Ukrainian by sdemchenko #####
+	uk* )
+		title1="Як ви хочете встановити шрифт?"
+		text="Ім'я файла не може містити пробіли!    "
+		system="Система" 
+		user="Користувач"
+		title2="Увага!                            "
+		text1="Установка в систему встановлює для всіх користувачів.        "
+		title2="Установка для користувача                       "
+		text2="Установка для поточного користувача.       "
+		question="Хочете продовжити?                 "
+		done="Установку завершено.            "
+		done1="Будь ласка, перезапустіть програми, щоб користуватися шрифтом. "
+		error="Помилка!                                "
+		error1="$font вже встановлено.         "
+		error2="Установку шрифту відмінено користувачем!"
+		error3="Шрифт не встановлено! Будь ласка, перевірте чи є пробіли в імені файла."
+		error4="Файл не вибрано!                   " 
+		select="Вибрати"
+		type="Тип установки";;
+        ###### Japanese by blowback #####
+	ja* )
+		title1="どのようにフォントをインストールしますか?"
+		text="ファイル名にスペースは使用できません!   "
+		system="システム" 
+		user="ユーザー"
+		title2="警告! "
+		text1="システムへインストールするとすべてのユーザで使用できるようになります。    "
+		title2="ユーザーインストール                     "
+		text2="現在のユーザーにインストールします      "
+		question="続行しますか?          "
+		done="インストールは完了しました。            "
+		done1="フォントを使用するためにはアプリケーションを再起動してください。 "
+		error="エラー!         "
+		error1="$font は既にインストールされています。        "
+		error2="インストールはユーザーによりキャンセルされました!"
+		error3="フォントはインストールされませんでした！ ファイル名にスペースが含まれていないかチェックしてください。"
+		error4="ファイルが選択されていません!                   " 
+		select="選択"
+		type="インストールタイプ";;
+        ###### Catalan by wuying_ren #####
+	ca* )
+		title1="Com voleu instal·lar la font?"
+		text="El nom del fitxer no pot contenir cap espai!    "
+		system="Sistema" 	
+		user="Usuari"
+		title2="Advertència!                             "
+		text1="Instal·lar al sistema instal·la per a tots els usuaris.        "
+		title2="Instal·lació per a usuari                       "
+		text2="Instal·lant per a l'usuari actual.       "
+		question="Voleu continuar?          "
+		done="Instal·lació finalitzada.            "
+		done1="Si us plau, reinicieu les aplicacions per tal de poder fer servir les fonts.  "
+		error="Error!                                "
+		error1="$font ja es troba instal·lada.         "
+		error2="La instal·lació de la font ha estat cancel·lada per l'usuari!"
+		error3="No s'ha instal·lat la font! Si us plau, comproveu que no hi hagin espais al nom."
+		error4="No s'ha seleccionat cap fitxer!               " 
+		select="Selecció"
+		type="Tipus d'instal·lació";;
+        ###### Portuguese by sergio marques #####
+	pt_PT* )
+		title1="Como deseja instalar as fontes?"
+		text="O nome do ficheiro não pode conter espaços!     "
+		system="Sistema" 	
+		user="Utilizador"
+		title2="Aviso!                             "
+		text1="Instalar no sistema instala para todos os utilizadores.         "
+		title2="Instalação para Utilizador                       "
+		text2="Instalar para o utilizador actual.       "
+		question="Deseja continuar?          "
+		done="Instalação completa.            "
+		done1="Por favor, reinicie as aplicações para usar as novas fontes.   "
+		error="Erro!                                "
+		error1="$font já está instalada.         "
+		error2="Instalação de fonte cancelada pelo utilizador!"
+		error3="Fonte não foi instalada! Por favor, veja se o nome contém espaços.  "
+		error4="Nenhum ficheiro seleccionado!               " 
+		select="Seleccione"
+		type="Tipo de Instalação";;
+        ###### Portuguese(Brazilian) by Andrey Bruggemann #####
+	pt_BR* )
+		title1="Como deseja instalar as fontes?"
+		text="O nome do ficheiro não pode conter espaços!     "
+		system="Sistema" 	
+		user="Utilizador"
+		title2="Aviso!                             "
+		text1="Instalar no sistema instala para todos os utilizadores.         "
+		title2="Instalação para Utilizador                       "
+		text2="Instalar para o utilizador actual.       "
+		question="Deseja continuar?          "
+		done="Instalação completa.            "
+		done1="Por favor, reinicie as aplicações para usar as novas fontes.   "
+		error="Erro!                                "
+		error1="$font já está instalada.         "
+		error2="Instalação de fonte cancelada pelo utilizador!"
+		error3="Fonte não foi instalada! Por favor, veja se o nome contém espaços.  "
+		error4="Nenhum ficheiro seleccionado!               " 
+		select="Seleccione"
+		type="Tipo de Instalação";;
+        ###### Polish by szamot83 #####
+	pl* )
+		title1="Wybierz rodzaj instalacji czcionki?"
+		text="Plik musi mieć uprawnienia przynajmniej do odczytu pliku!     "
+		system="System" 	
+		user="Użytkownik"
+		title2="Uwaga!                             "
+		text1="Instalacja dla systemu, instaluje dla wszystkich użytkowników.         "
+		title2="Unstalacja użytkownika                       "
+		text2="Instalacja dla obecnego użytkownika.       "
+		question="Kontynuować?          "
+		done="Instalacja zakończona            "
+		done1="Proszę uruchomić ponownie programy, żeby używać nowej czcionki   "
+		error="Błąd!                                "
+		error1="$font jest już zainstalowana         "
+		error2="Instalacja czcionki przerwana przez użytkownika!"
+		error3="Czcionka nie została zainstalowana! Sprawdź uprawnienia do pliku  "
+		error4="Nie wybrano żadnego pliku!               " 
+		select="Wybierz"
+		type="Rodzaj instalacji";;
+        ###### Dutch by Lvw2000 #####
+	nl* )
+	        title1="Hoe wilt u het lettertype installeren??"
+		text="Het bestand moet minstens alleen-lezen toegang hebben!   "
+		system="Systeem" 
+		user="Gebruiker"
+		title2="Waarschuwing!                             "
+		text1="Installeren voor het systeem installeert voor alle gebruikers.        "
+		title2="Gebruikersinstallatie                       "
+		text2="Installeren voor de huidige gebruiker.      "
+		question="Wilt u verdergaan?          "
+		done="Installatie is voltooid.            "
+		done1="Gelieve programma's te herstarten om het lettertype te gebruiken. "
+		error="Error!                                "
+		error1="$font is al geïnstalleerd.         "
+		error2="Installatie van het lettertype was geannuleerd door de gebruiker!"
+		error3="Het lettertype is niet geïnstalleerd! Gelieve de bestandspermissies te controleren!!"
+		error4="Geen bestand geselecteerd!                   " 
+		select="Selecteer"
+		type="Installatie type";;
+        ###### Korean by JuEUS-U #####
+	ko* )
+	        title1="어떤 폰트로 설치하시겠습니까?"
+		text="읽기권한이 필요합니다!   "
+		system="시스템" 
+		user="사용자"
+		title2="경고!                            "
+		text1="시스템 폰트는 모든 사용자가 사용 가능합니다.        "
+		title2="사용자 폰트 설치                       "
+		text2="현재 사용자를 위해 설치합니다.      "
+		question="계속 하시겠습니까?         "
+		done="설치가 완료되었습니다.            "
+		done1="폰트가 적용되려면 프로그램을 재시작 해야합니다. "
+		error="에러!                                "
+		error1="$font는 이미 설치되어있습니다.          "
+		error2="폰트 설치가 사용자에 의해 취소되었습니다."
+		error3="폰트가 설치되지 않았습니다. 파일 권한을 확인해 주십시오."
+		error4="파일을 선택해 주십시오.                   " 
+		select="선택"
+		type="설치 방법";;
+        ###### Croatian by x_sport #####
+	hr* )
+	        title1="Kako zelite instalirati font?"
+		text="Datoteka mora imati najmanje read only Dopustenja!  "
+		system="Sistem" 
+		user="Korisnik"
+		title2="Upozorenje!                            "
+		text1="Instaliranjem u sistem instalirate svim korisnicima.       "
+		title2="Korisnicka instalacija                       "
+		text2="Instaliranje u trenutnog korisnika.     "
+		question="Zelite li nastaviti?        "
+		done="Instalacija je zavrsena.           "
+		done1="Molimo restartajte programe za upotrebu fonta."
+		error="Greska!                                "
+		error1="$font je vec instaliran.         "
+		error2="Instalacija fonta je prekinuta od strane korisnika!"
+		error3="Font nije instaliran! Molimo provjerite datoteku Dopuštenja!"
+		error4="Nijedna dattoteka nije odabrana!                   " 
+		select="Odaberi"
+		type="Tip instalacije"
+esac
+
+#################################################
+## Check if a font file was selected
+#################
+if [ "$font" = "" ]
+then 
+zenity --error --title="$error" --text="$error4"
+exit
+fi
+
+#################################################
+## Check for duplicate font file
+#################
+for test_dir in $check_dirs
+do  
+if [ -f "$HOME/.fonts/$font" ] || [ -f "/usr/share/fonts/truetype/$test_dir/$font" ] || [ -f "/usr/share/fonts/truetype/$font" ];
+then 
+zenity --error --title="$error" --text="$error1" 
+exit;		
+fi done 
+
+#################################################
+## Check for or create user font folder
+#################
+if [ ! -d "~/.fonts" ]; then
+	mkdir -p ~/.fonts 
+fi
+#################################################
+## Run the installer
+##################
+ans=$(zenity --width $WD --height $HT --window-icon=$ic --title="$title1" --list --text="$text" --radiolist --column="$select" --column="$type" TRUE "$user" FALSE $system);
+if [ "$ans" = "$user" ] ; then
+	zenity --width $WD --question --title="$text2" --text="$question"
+ case $? in
+                 0)
+                        cp "$file" $HOME/.fonts/ | fc-cache ~/.fonts  ;;
+                 1)
+                        zenity --width=$WD --error --title="$error" --text="$error2" 
+exit ;;
+        esac
+
+fi
+if [ "$ans" = "$system" ] ; then
+	zenity --width $WD --title="$text1" --question --text="$question"
+ case $? in
+                 0)
+if [ ! -a "/usr/share/fonts/truetype/fontinstaller" ]; then
+	gksu mkdir /usr/share/fonts/truetype/fontinstaller
+fi                     
+gksu cp "$file" /usr/share/fonts/truetype/fontinstaller/ 
+ gksu fc-cache /usr/share/fonts/truetype/fontinstaller/ ;;
+                 1)
+ zenity --width=$WD --title="$error" --error --text="$error2" 
+exit ;;
+        esac
+
+fi
+if [ "$ans" = "" ] ; then
+ zenity --width=$WD --title="$error" --error --text="$error2"
+exit
+fi
+#################################################
+## Check if the font was installed.
+#################
+if [ -f "$HOME/.fonts/$font" ] || [ -f "/usr/share/fonts/truetype/fontinstaller/$font" ] ;
+then 
+	zenity --width=$WD --info --title="$done" --text="$done1" 
+else
+	zenity --width=$WD --info --title="$error" --text="$error3" 
+fi

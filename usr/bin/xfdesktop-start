@@ -1,0 +1,5 @@
+#!/bin/bash
+sleep 5
+killall xfdesktop
+exec xfdesktop
+exit 0

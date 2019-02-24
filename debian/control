@@ -1,0 +1,17 @@
+Source: xenta-artwork-xfce
+Section: admin
+Priority: required
+Maintainer: Dindin Hernawan (Xenta OS) <dindin_hernawan@yahoo.com>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.7
+Homepage: https://github.com/xentaoslinux/xenta-artwork-xfce
+Vcs-Browser: https://github.com/xentaoslinux/xenta-artwork-xfce.git
+
+Package: xenta-artwork-xfce
+Architecture: all
+Depends: xenta-backgrounds-xfce, xenta-artwork-common, xenta-artwork-gnome
+Conflicts : mint-artwork-xfce
+Replaces : mint-artwork-xfce
+Provides: gdm-theme
+Description: Paket Base Artwork Desktop Xfce
+  Paket Artwork dan Konfigurasi Bawaan Xenta OS edisi Xfce.

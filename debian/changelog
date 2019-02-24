@@ -1,0 +1,590 @@
+xenta-artwork-xfce (5.0.0) batik; urgency=medium
+
+  * Repacking Paket
+
+ -- Dindin Hernawan (Xenta OS) <dindin_hernawan@yahoo.com>  Sun, 24 Feb 2019 10:29:47 +0700 
+
+mint-artwork-xfce (2017.12.13) sylvia; urgency=medium
+
+  * Menu: Add Xed, Calculator and Task Manager to default favorites.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 13 Dec 2017 09:48:53 +0000
+
+mint-artwork-xfce (2017.11.29) sylvia; urgency=medium
+
+  * Update notifyd settings
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 29 Nov 2017 11:17:14 +0000
+
+mint-artwork-xfce (2017.07.06) sonya; urgency=medium
+
+  * Whisker menu: Set switch user key to use dm-tool switch-to-greeter.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 06 Jul 2017 11:00:27 +0200
+
+mint-artwork-xfce (2017.01.24) serena; urgency=medium
+
+  * Switch default removable audio handler from banshee to rhythmbox
+  * Reduce default notification timeout to 5 seconds
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 24 Jan 2017 13:46:04 +0000
+
+mint-artwork-xfce (2016.07.27.1) sarah; urgency=medium
+
+  * Whisker: Don't use generic names
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 27 Jul 2016 13:06:06 +0200
+
+mint-artwork-xfce (2016.07.27) sarah; urgency=medium
+
+  * Replaced clock with datetime applet
+  * Switched Compiz decorations to Mint-X
+  * Changed task-manager toolbar style to small
+  * Set Nautilus not to handle the desktop canvas
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 27 Jul 2016 12:00:22 +0200
+
+mint-artwork-xfce (2016.07.12) sarah; urgency=medium
+
+  * Replaced md5sum utility with sha256sum
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 12 Jul 2016 09:09:50 +0200
+
+mint-artwork-xfce (2016.01.05) rosa; urgency=medium
+
+  * Improved the localization of Thunar actions
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 05 Jan 2016 10:23:21 +0000
+
+mint-artwork-xfce (2016.01.04) rosa; urgency=medium
+
+  * Panel: Middle-click window buttons to close them
+  * Set GTK menus_have_icons to true by default
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 04 Jan 2016 14:29:05 +0000
+
+mint-artwork-xfce (2015.12.21) rosa; urgency=medium
+
+  * Default panel configuration: Switched Thunar.desktop -> exo-file-manager.desktop
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 21 Dec 2015 15:04:59 +0000
+
+mint-artwork-xfce (2015.07.21) rafaela; urgency=medium
+
+  * Fixed Thunar search context menu item not launching catfish
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 21 Jul 2015 15:05:09 +0200
+
+mint-artwork-xfce (2015.07.20) rafaela; urgency=medium
+
+  * Fixed default Xfce keyboard shortcut configuration
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 20 Jul 2015 12:54:01 +0200
+
+mint-artwork-xfce (2015.07.09) rafaela; urgency=medium
+
+  * Renamed mintInstall.desktop -> mintinstall.desktop
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 09 Jul 2015 12:30:22 +0200
+
+mint-artwork-xfce (2015.07.06.2) rafaela; urgency=medium
+
+  * Fixed typo in panel configuration
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 06 Jul 2015 20:24:03 +0200
+
+mint-artwork-xfce (2015.07.06.1) rafaela; urgency=medium
+
+  * Switched notify theme to Mint-X
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 06 Jul 2015 18:00:46 +0200
+
+mint-artwork-xfce (2015.07.06) rafaela; urgency=medium
+
+  * whisker-menu: Use generic names
+  * whisker-menu: use mdmflexiserver to switch users
+  * thunar: smaller icons in sidebar
+  * thunar: always show thumbmails
+  * desktop: don't show devices
+  * xfwm: draw frame around selected window during alt-tab
+  * Auto-browse inserted media
+  * panel: Replaced places with home shortcut
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 06 Jul 2015 15:01:54 +0200
+
+mint-artwork-xfce (2015.07.05.1) rafaela; urgency=medium
+
+  * Terminal: transparency at 80% and added menubars
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 05 Jul 2015 20:06:26 +0200
+
+mint-artwork-xfce (2015.07.05) rafaela; urgency=medium
+
+  * Depend on mint-artwork-common
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 05 Jul 2015 14:13:56 +0200
+
+mint-artwork-xfce (2015.01.07.1) rebecca; urgency=medium
+
+  * Changed terminal shortcut from Ctrl+t to Ctrl+Alt+t
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 07 Jan 2015 10:47:38 +0100
+
+mint-artwork-xfce (2015.01.07) rebecca; urgency=medium
+
+  * Added Ctrl+T shortcut to launch terminals
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 07 Jan 2015 10:42:56 +0100
+
+mint-artwork-xfce (2014.12.11) rebecca; urgency=medium
+
+  * Switched datetime applet to clock applet
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 11 Dec 2014 16:47:31 +0100
+
+mint-artwork-xfce (2014.12.09.1) rebecca; urgency=medium
+
+  * Fixed panel launchers
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 09 Dec 2014 20:42:51 +0100
+
+mint-artwork-xfce (2014.12.09) rebecca; urgency=medium
+
+  * Whisker: categories on the left, hover enabled, search at the bottom
+  * Xfwm: don't switch workspace when dragging a window close to the edge
+  * Xfwm: enabled window tiling to other windows
+  * Panel: added firefox and terminal launchers
+  * Set the default metacity theme to Mint-X (used in Compiz)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 09 Dec 2014 13:47:37 +0000
+
+mint-artwork-xfce (2014.11.04) rebecca; urgency=medium
+
+  * Switched to Noto fonts
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 04 Nov 2014 13:43:00 +0100
+
+mint-artwork-xfce (2014.06.21) qiana; urgency=medium
+
+  * Switched panel size to 32px
+  * Switched Whisker logo to Mint logo
+  * Reduced panel opacity to 95%
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 21 Jun 2014 13:15:12 +0100
+
+mint-artwork-xfce (2014.06.12) qiana; urgency=medium
+
+  * Switched DVD action from vlc to vlc /dev/sr0
+  * Changed font for datetime applet from Sans 10 to Sans 9
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 12 Jun 2014 10:50:08 +0100
+
+mint-artwork-xfce (2014.06.11) qiana; urgency=medium
+
+  * Switched desktop font size to 9
+  * Switched desktop tooltip icon size to 48
+  * switched to default notification theme
+  * Enabled images in menus
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 11 Jun 2014 10:07:04 +0100
+
+mint-artwork-xfce (2014.06.10) qiana; urgency=medium
+
+  * Updated configuration for Qiana
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 10 Jun 2014 17:47:33 +0100
+
+mint-artwork-xfce (2013.12.18.1) petra; urgency=low
+
+  * Moved Xfce configuration from skel to system
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 18 Dec 2013 13:33:35 +0000
+
+mint-artwork-xfce (2013.12.18) petra; urgency=low
+
+  * Added Super_L shortcut to launch Whiskermenu
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 18 Dec 2013 10:27:02 +0000
+
+mint-artwork-xfce (2013.12.17) petra; urgency=low
+
+  * Fixed shadows and color of desktop items
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 17 Dec 2013 20:03:14 +0000
+
+mint-artwork-xfce (2013.12.07) petra; urgency=low
+
+  * Fixed typo in uca.xml
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 07 Dec 2013 12:37:29 +0000
+
+mint-artwork-xfce (2013.12.06) petra; urgency=low
+
+  * Don't save the session content by default on logout
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 06 Dec 2013 15:28:25 +0000
+
+mint-artwork-xfce (2013.12.05.1) petra; urgency=low
+
+  * Suspend when on battery power and lid is closed
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 05 Dec 2013 15:53:01 +0000
+
+mint-artwork-xfce (2013.12.05) petra; urgency=low
+
+  * l10n Thunar actions
+  * Removed "permanently remove" Thunar action (duplicates existing delete functionality)
+  * Removed print thunar action (xfprint4 no longer available)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 05 Dec 2013 13:52:43 +0000
+
+mint-artwork-xfce (2013.12.02) petra; urgency=low
+
+  * Changed terminal colors
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 02 Dec 2013 16:35:37 +0000
+
+mint-artwork-xfce (2013.07.07) olivia; urgency=low
+
+  * Changed menu to whiskermenu
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 07 Jul 2013 16:03:12 +0200
+
+mint-artwork-xfce (2013.06.21.1) olivia; urgency=low
+
+  * Changed desktop icons layout
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 21 Jun 2013 13:27:58 +0100
+
+mint-artwork-xfce (2013.06.21) olivia; urgency=low
+
+  * Changed default font, desktop icons
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 21 Jun 2013 11:13:17 +0100
+
+mint-artwork-xfce (2013.06.10.2) olivia; urgency=low
+
+  * Changed a few default settings, enabled compositing
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 10 Jun 2013 17:00:10 +0100
+
+mint-artwork-xfce (2013.06.10.1) olivia; urgency=low
+
+  * Changed default background
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 10 Jun 2013 14:39:06 +0100
+
+mint-artwork-xfce (2013.06.10) olivia; urgency=low
+
+  * Removed postinst hacks which modified /usr/share/backgrounds
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 10 Jun 2013 14:25:17 +0100
+
+mint-artwork-xfce (2012.12.17) nadia; urgency=low
+
+  * Added font antialiasing
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 17 Dec 2012 12:27:46 +0000
+
+mint-artwork-xfce (2012.11.30.2) nadia; urgency=low
+
+  * Updated thunar's volman info
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 30 Nov 2012 16:56:49 +0000
+
+mint-artwork-xfce (2012.11.30.1) nadia; urgency=low
+
+  * Added Xfce terminal config
+  * Changed default terminal from gnome-terminal to xfce4-terminal
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 30 Nov 2012 13:24:15 +0000
+
+mint-artwork-xfce (2012.11.30) nadia; urgency=low
+
+  * Defined font for GT3 and GNOME settings
+  * Added definitions for Xfce notifications
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 30 Nov 2012 12:52:01 +0000
+
+mint-artwork-xfce (2012.07.10.1) maya; urgency=low
+
+  * Force gnome-terminal's foreground color
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 10 Jul 2012 12:31:31 +0200
+
+mint-artwork-xfce (2012.07.10) maya; urgency=low
+
+  * Force gnome-terminal to use specific colors
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 10 Jul 2012 11:13:57 +0200
+
+mint-artwork-xfce (2012.07.05) maya; urgency=low
+
+  * Reduced panel height to 25px
+  * Reduced WM margins to 0px
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 05 Jul 2012 23:45:17 +0200
+
+mint-artwork-xfce (2012.06.25.2) maya; urgency=low
+
+  * Added glib overwrite for gedit
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 25 Jun 2012 14:45:51 +0100
+
+mint-artwork-xfce (2012.06.25.1) maya; urgency=low
+
+  * Updated default settings
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 25 Jun 2012 13:26:34 +0100
+
+mint-artwork-xfce (2012.06.22.2) maya; urgency=low
+
+  * Updated default settings
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 22 Jun 2012 11:46:02 +0100
+
+mint-artwork-xfce (2012.06.22.1) maya; urgency=low
+
+  * Removed Debian deps
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 22 Jun 2012 11:14:43 +0100
+
+mint-artwork-xfce (2012.04.22) debian; urgency=low
+
+  * Workaround for regression affecting pixmap engine
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 22 Apr 2012 09:55:00 +0100
+
+mint-artwork-xfce (2012.04.7) debian; urgency=low
+
+  * Removed ctrl-alt-backspace (moved to debian-system-adjustments)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 07 Apr 2012 16:38:14 +0100
+
+mint-artwork-xfce (2012.03.29.1) debian; urgency=low
+
+  * Fixed Thunar's permanent delete UCA
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 29 Mar 2012 13:35:45 +0100
+
+mint-artwork-xfce (2012.03.29) debian; urgency=low
+
+  * Added permanent delete option in Thunar
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 29 Mar 2012 11:36:26 +0100
+
+mint-artwork-xfce (2012.03.28) debian; urgency=low
+
+  * Fixed missing menu icon
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 28 Mar 2012 17:28:44 +0100
+
+mint-artwork-xfce (2012.03.27.2) debian; urgency=low
+
+  * Fixed context menu disappearing in thunar
+  * Fixed missing menu icon
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 27 Mar 2012 21:12:23 +0100
+
+mint-artwork-xfce (2012.03.27.1) debian; urgency=low
+
+  * Made totem default for audio/video files
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 27 Mar 2012 20:41:58 +0100
+
+mint-artwork-xfce (2012.03.27) debian; urgency=low
+
+  * Better gtk3 support
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 27 Mar 2012 19:55:00 +0000
+
+mint-artwork-xfce (2011.09.09.1) debian; urgency=low
+
+  * Hinting and antialiasing by default in font settings
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 9 Sep 2011 13:59:00 +0000
+
+mint-artwork-xfce (2011.09.09) debian; urgency=low
+
+  * Fixed mime associations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 9 Sep 2011 13:15:00 +0000
+
+mint-artwork-xfce (2011.09.08) debian; urgency=low
+
+  * Fixed GT2 theme
+  * Added skel info to remove ugly grey borders on the desktop
+  * The menu now uses exo helpers
+  * Added lock screen option to the menu
+  * Settings doesn't show system items in the menu anymore
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 8 Sep 2011 18:37:00 +0000
+
+mint-artwork-xfce (2011.08.08) debian; urgency=low
+
+  * Added support for GTK3
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 8 Aug 2011 10:26:00 +0000
+
+mint-artwork-xfce (2011.07.30.1) debian; urgency=low
+
+  * New Xfce panel and menus
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 30 Jul 2011 16:36:00 +0000
+
+mint-artwork-xfce (2011.03.29.5) debian; urgency=low
+
+  * Switched default session to Xfce Session
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 29 Mar 2011 13:35:00 +0000
+
+mint-artwork-xfce (2011.03.29) debian; urgency=low
+
+  * Added backgrounds to /usr/share/xfc4/backdrops (via mint-backgrounds-xfce)
+  * Removed gtk-menu-popup-delay = 1 from Mint-X-Metal-Xfce
+  * Added Xfwm4 theme in Mint-X-Metal-Xfce
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 29 Mar 2011 10:46:00 +0000
+
+mint-artwork-xfce (2011.03.14) debian; urgency=low
+
+  * Assigned Audio CDs to Rhythmbox
+  * Assigned xfce4-screenshooter to Print screen key
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 14 Mar 2011 15:09:00 +0000
+
+mint-artwork-xfce (2011.03.13) debian; urgency=low
+
+  * Added new theme for Xfce
+  * Assigned Audio CDs to Rhythmbox
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 13 Mar 2011 11:16:00 +0000
+
+mint-artwork-xfce (2011.03.10.3) debian; urgency=low
+
+  * Debian
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 10 Mar 2011 12:12:00 +0000
+
+mint-artwork-xfce (2011.03.06) debian; urgency=low
+
+  * Debian
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 06 Mar 2011 16:31:00 +0000
+
+mint-artwork-xfce (9.0.7) isadora; urgency=low
+
+  * removed minty-fresh icon theme
+
+ -- merlwiz79 <mintmerlwiz79@gmail.com>  Sat, 03 Jul 2010 03:26:00 -0600
+
+mint-artwork-xfce (9.0.6) isadora; urgency=low
+
+  * removed feh from depends
+
+ -- merlwiz79 <mintmerlwiz79@gmail.com>  Sat, 26 Jun 2010 01:52:00 -0600
+
+mint-artwork-xfce (9.0.5) isadora; urgency=low
+
+  * fixed control file
+
+ -- merlwiz79 <mintmerlwiz79@gmail.com>  Sat, 26 Jun 2010 01:52:00 -0600
+
+mint-artwork-xfce (9.0.4) isadora; urgency=low
+
+  * fixed control file
+
+ -- merlwiz79 <mintmerlwiz79@gmail.com>  Sat, 26 Jun 2010 01:52:00 -0600
+
+mint-artwork-xfce (9.0.3) isadora; urgency=low
+
+  * fixed gdm theme to work with mint-wallpapers
+
+ -- merlwiz79 <mintmerlwiz79@gmail.com>  Sat, 26 Jun 2010 00:52:00 -0600
+
+mint-artwork-xfce (9.0.2) isadora; urgency=low
+
+  * fixed compatiblity with mint-artwork-gnome in isadora-xfce upstream repo
+
+ -- merlwiz79 <mintmerlwiz79@gmail.com>  Fri, 25 Jun 2010 22:40:00 -0600
+
+mint-artwork-xfce (9.0.1) isadora; urgency=low
+
+  * Isadora release
+
+ -- merlwiz79 <mintmerlwiz79@gmail.com>  Thu, 27 May 2010 22:32:00 -0600
+
+mint-artwork-xfce (2.0.1) helena; urgency=low
+
+  * Now depends on mint-artwork-common
+
+ -- merlwiz79 <mintmerlwiz79@gmail.com>  Tue, 23 Feb 2009 21:55:00 -0600
+
+mint-artwork-xfce (2.0.0) helena; urgency=low
+
+  * Helena Release
+
+ -- merlwiz79 <mintmerlwiz79@gmail.com>  Sat, 24 Jan 2009 21:42:00 -0600
+
+mint-artwork-xfce (1.9) gloria; urgency=low
+
+  * fixed for updating for new mintSystem
+  * fixed to Depend on gtk2-engines-ubuntulooks or human-theme(provides gtk2-engines-ubuntulooks)
+
+ -- merlwiz79 <mintmerlwiz79@gmail.com>  Sun, 16 Aug 2009 16:54:00 -0600
+
+mint-artwork-xfce (1.8) gloria; urgency=low
+
+  * fixed for updating from Linux Mint 6 XFCE CE
+
+ -- merlwiz79 <mintmerlwiz79@gmail.com>  Mon, 10 Aug 2009 00:40:00 -0600
+
+mint-artwork-xfce (1.7) gloria; urgency=low
+
+  * fixed the splash image
+  * fixed Minty-Fresh icon theme 
+
+ -- merlwiz79 <mintmerlwiz79@gmail.com>  Thu, 09 Jun 2009 22:48:00 -0600
+
+mint-artwork-xfce (1.6) gloria; urgency=low
+
+  * ported Shiki-Mint-Metacity as Shiki-Mint-xfwm
+
+ -- merlwiz79 <mintmerlwiz79@gmail.com>  Thu, 09 Jun 2009 22:48:00 -0600
+
+mint-artwork-xfce (1.5) gloria; urgency=low
+
+  * update Minty-Fresh to v3
+
+ -- merlwiz79 <mintmerlwiz79@gmail.com>  Mon, 22 Jun 2009 22:08:00 -0600
+
+mint-artwork-xfce (1.4) gloria; urgency=low
+
+  * fix themes and add triggers
+
+ -- merlwiz79 <mintmerlwiz79@gmail.com>  Mon, 22 Jun 2009 14:08:00 -0600
+
+mint-artwork-xfce (1.3) gloria; urgency=low
+
+  * upstream update
+
+ -- merlwiz79 <mintmerlwiz79@gmail.com>  Tue, 09 Jun 2009 05:53:00 -0600
+
+mint-artwork-xfce (1.2) felicia; urgency=low
+
+  * fixed installion problem
+
+ -- merlwiz79 <mintmerlwiz79@gmail.com>  Mon, 16 Feb 2009 03:18:00 -0600
+
+mint-artwork-xfce (1.1) felicia; urgency=low
+
+  * fixed LinuxMint and Murrina-Blue themes
+
+ -- merlwiz79 <mintmerlwiz79@gmail.com>  Sun, 15 Feb 2009 05:18:00 -0600
+
+mint-artwork-xfce (1.0) felicia; urgency=low
+
+  * Inital release
+
+ -- merlwiz79 <linuxmint.com>  Wed, 10 Dec 2008 07:50:00 -0600
+

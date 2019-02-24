@@ -1,0 +1,14 @@
+# Ignore Berkas Paket
+build-stamp
+configure-stamp
+debian/*.log
+debian/lsb-release-udeb
+debian/tmp
+debian/*.substvars
+debian/files
+debian/debhelper-build-stamp
+debian/files~
+
+# Directory Paket
+debian/xenta-artwork-xfce
+#gitpush

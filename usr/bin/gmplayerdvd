@@ -1,0 +1,147 @@
+#! /bin/sh
+
+#Variables
+
+#/Variables
+
+#Function
+if [  -f /usr/bin/gmplayer ] || [  -f /usr/local/bin/gmplayer ]; then
+	ans=yes
+elif [ "$ans"="" ] || [ -f /usr/bin/vlc ] || [ -f /usr/local/bin/vlc ]; then
+	vlcdvd && exit 0
+else
+	echo "gmplayer and vlc can't be found"
+fi 
+
+
+gmplayercd () {
+grep 'cd' /etc/mtab | cut -d ' ' -f1 | while read device
+do
+	echo "Device found at $device"
+grep 'cd' /etc/mtab | cut -d ' ' -f2 | while read line
+do
+	echo "Device found at $line"
+#DVDs
+	if [ -d "$line"/VIDEO_TS ];then
+		echo "DVD found at $line"
+		echo "Playing DVD with gmplayer -dvd-device $line dvd://"
+		gmplayer -dvd-device $line dvd://
+		exit
+	elif [ -d /media/cdrom/VIDEO_TS/ ] || [ -f /dev/scd0 ]; then
+		gmplayer -dvd-device /dev/scd0 dvd:// 
+		exit
+	elif [ -d /media/cdrom1/VIDEO_TS/ ] || [ -f /dev/scd1 ]; then
+		gmplayer -dvd-device /dev/scd1 dvd:// 
+		exit
+	elif [ -d /media/cdrom2/VIDEO_TS/ ] || [ -f /dev/scd2 ]; then
+		gmplayer -dvd-device /dev/scd2 dvd:// 
+		exit
+	elif [ -d /media/cdrom3/VIDEO_TS/ ] || [ -f /dev/scd3 ]; then
+		gmplayer -dvd-device /dev/scd3 dvd:// 
+		exit
+	elif [ -d /media/cdrom4/VIDEO_TS/ ] || [ -f /dev/scd4 ]; then
+		gmplayer -dvd-device /dev/scd4 dvd:// 
+		exit
+	elif [ -d /media/cdrom5/VIDEO_TS/ ] || [ -f /dev/scd5 ]; then
+		gmplayer -dvd-device /dev/scd5 dvd:// 
+		exit
+	elif [ -d /media/cdrom6/VIDEO_TS/ ] || [ -f /dev/scd6 ]; then
+		gmplayer -dvd-device /dev/scd6 dvd:// 
+		exit
+	elif [ -d /media/cdrom7/VIDEO_TS/ ] || [ -f /dev/scd7 ]; then
+		gmplayer -dvd-device /dev/scd7 dvd:// 
+		exit
+	elif [ -d /media/cdrom8/VIDEO_TS/ ] || [ -f /dev/scd8 ]; then
+		gmplayer -dvd-device /dev/scd8 dvd:// 
+		exit
+	elif [ -d /media/cdrom9/VIDEO_TS/ ] || [ -f /dev/scd9 ]; then
+		gmplayer -dvd-device /dev/scd9 dvd:// 
+		exit
+#VCDs
+	elif [ -d "$line"/MPEGAV ];then	
+		echo "VCD found at $device"
+		echo "Playing VCD with gmplayer -cdrom-device $device vcd://2"
+		gmplayer -cdrom-device $device vcd://2
+		exit		
+	elif [ -d "$line"/mpegav ];then	
+		echo "VCD found at $device"
+		echo "Playing VCD with gmplayer -cdrom-device $device vcd://2"
+		gmplayer -cdrom-device $device vcd://2
+		exit
+	else
+		echo "Drive not found using /dev/dvd"
+		gmplayer -dvd-device /dev/dvd
+		exit
+	fi
+done
+done
+}
+
+gmplayersr () {
+grep 'sr' /etc/mtab | cut -d ' ' -f1 | while read devices
+do
+	echo "Device found at $device"
+grep 'sr' /etc/mtab | cut -d ' ' -f2 | while read lines
+do
+	echo "Device found at $line"
+#DVDs
+	if [ -d "$lines"/VIDEO_TS ];then
+		echo "DVD found at $lines"
+		echo "Playing DVD with gmplayer -dvd-device $lines dvd://"
+		gmplayer -dvd-device $lines dvd://
+		exit
+	elif [ -d /media/cdrom/VIDEO_TS/ ] || [ -f /dev/sr0 ]; then
+		gmplayer -dvd-device /dev/sr0 dvd:// 
+		exit
+	elif [ -d /media/cdrom1/VIDEO_TS/ ] || [ -f /dev/sr1 ]; then
+		gmplayer -dvd-device /dev/sr1 dvd:// 
+		exit
+	elif [ -d /media/cdrom2/VIDEO_TS/ ] || [ -f /dev/sr2 ]; then
+		gmplayer -dvd-device /dev/sr2 dvd:// 
+		exit
+	elif [ -d /media/cdrom3/VIDEO_TS/ ] || [ -f /dev/sr3 ]; then
+		gmplayer -dvd-device /dev/sr3 dvd:// 
+		exit
+	elif [ -d /media/cdrom4/VIDEO_TS/ ] || [ -f /dev/sr4 ]; then
+		gmplayer -dvd-device /dev/sr4 dvd:// 
+		exit
+	elif [ -d /media/cdrom5/VIDEO_TS/ ] || [ -f /dev/sr5 ]; then
+		gmplayer -dvd-device /dev/sr5 dvd:// 
+		exit
+	elif [ -d /media/cdrom6/VIDEO_TS/ ] || [ -f /dev/sr6 ]; then
+		gmplayer -dvd-device /dev/sr6 dvd:// 
+		exit
+	elif [ -d /media/cdrom7/VIDEO_TS/ ] || [ -f /dev/sr7 ]; then
+		gmplayer -dvd-device /dev/sr7 dvd:// 
+		exit
+	elif [ -d /media/cdrom8/VIDEO_TS/ ] || [ -f /dev/sr8 ]; then
+		gmplayer -dvd-device /dev/sr8 dvd:// 
+		exit
+	elif [ -d /media/cdrom9/VIDEO_TS/ ] || [ -f /dev/sr9 ]; then
+		gmplayer -dvd-device /dev/sr9 dvd:// 
+		exit
+#VCDs
+	elif [ -d "$lines"/MPEGAV ];then	
+		echo "VCD found at $devices"
+		echo "Playing VCD with gmplayer -cdrom-device $devices vcd://2"
+		gmplayer -cdrom-device $devices vcd://2
+		exit		
+	elif [ -d "$lines"/mpegav ];then	
+		echo "VCD found at $devices"
+		echo "Playing VCD with gmplayer -cdrom-device $devices vcd://2"
+		gmplayer -cdrom-device $devices vcd://2
+		exit
+	else
+		echo "Drive not found using /dev/dvd"
+		gmplayer -dvd-device /dev/dvd
+		exit
+	fi
+done
+done
+}
+test=grep 'cd' /etc/mtab | cut -d ' ' -f1
+if [ "$test" != "" ]; then
+	gmplayercd
+else
+	gmplayersr
+fi
