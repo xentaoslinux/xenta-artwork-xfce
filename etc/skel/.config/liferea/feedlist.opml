@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<opml version="1.0">
+  <head>
+    <title>Liferea Feed List Export</title>
+  </head>
+  <body>
+    <outline title="Unread" text="Unread" description="Unread" type="vfolder" id="scsaxqx" sortColumn="time" matchType="any" collapsed="true">
+      <outline type="rule" text="Read status" rule="unread" value="" additive="true"/>
+    </outline>
+    <outline title="Kabar Berita" text="Kabar Berita" description="Kabar Berita" type="folder" id="xuwxpel" sortColumn="time" expanded="true">
+      <outline title="Xenta OS" text="Xenta OS" description="Xenta OS" type="folder" id="xsikgej" sortColumn="time" collapsed="true">
+        <outline title="Xenta OS -   Free Software Distributions Linux Indonesia." text="Xenta OS -   Free Software Distributions Linux Indonesia." description="Xenta OS -   Free Software Distributions Linux Indonesia." type="atom" id="btyypoy" sortColumn="time" xmlUrl="http://www.xentaos.com/atom.xml" htmlUrl="http://www.xentaos.com/" updateInterval="-1" collapsed="true"/>
+      </outline>
+      <outline title="Kabar Linux" text="Kabar Linux" description="Kabar Linux" type="rss" id="jkggtpy" sortColumn="time" xmlUrl="https://kabarlinux.web.id/feed/" htmlUrl="https://kabarlinux.web.id" updateInterval="-1" collapsed="true"/>
+      <outline title="Situs Ali" text="Situs Ali" description="Situs Ali" type="rss" id="gqqblvr" sortColumn="time" xmlUrl="https://situsali.com/feed/" htmlUrl="https://situsali.com" updateInterval="-1" collapsed="true"/>
+      <outline title="Nothinux" text="Nothinux" description="Nothinux" type="rss" id="tfakfmf" sortColumn="time" xmlUrl="https://nothinux.id/feed/" htmlUrl="https://nothinux.id" updateInterval="-1" collapsed="true"/>
+      <outline title="Migrasi Linux" text="Migrasi Linux" description="Migrasi Linux" type="rss" id="iotsosy" sortColumn="time" xmlUrl="https://www.migrasilinux.or.id/feed/" htmlUrl="https://www.migrasilinux.or.id" updateInterval="-1" collapsed="true"/>
+      <outline title="Gang Buntu" text="Gang Buntu" description="Gang Buntu" type="atom" id="oggvdjg" sortColumn="time" xmlUrl="http://www.gangbuntu.id/atom.xml" htmlUrl="http://www.gangbuntu.id/" updateInterval="-1" collapsed="true"/>
+      <outline title="Lombokfoss" text="Lombokfoss" description="Lombokfoss" type="rss" id="rcvamjo" sortColumn="time" xmlUrl="https://www.lombokfoss.com/index.xml" htmlUrl="https://www.lombokfoss.com/" updateInterval="-1" collapsed="true"/>
+      <outline title="Sekolah Linux" text="Sekolah Linux" description="Sekolah Linux" type="rss" id="gdukslc" sortColumn="time" xmlUrl="https://sekolahlinux.com/feed" htmlUrl="https://sekolahlinux.com" updateInterval="-1" collapsed="true"/>
+      <outline title="Linux.or.id" text="Linux.or.id" description="Linux.or.id" type="rss" id="dysbrji" sortColumn="time" xmlUrl="http://www.linux.or.id/feed" htmlUrl="https://www.linux.or.id" updateInterval="-1" collapsed="true"/>
+      <outline title="Gaptek dot Net" text="Gaptek dot Net" description="Gaptek dot Net" type="atom" id="hqcyajd" sortColumn="time" xmlUrl="http://www.gaptek.net/feeds/posts/default" htmlUrl="http://www.gaptek.net/" updateInterval="-1" collapsed="true"/>
+      <outline title="LinuxNesia - Portal Linux Indonesia" text="LinuxNesia - Portal Linux Indonesia" description="LinuxNesia - Portal Linux Indonesia" type="atom" id="jqgmpnq" sortColumn="time" xmlUrl="http://www.linuxnesia.or.id/atom.xml" htmlUrl="http://www.linuxnesia.or.id/" updateInterval="-1" collapsed="true"/>
+      <outline title="FT Cyber Zone" text="FT Cyber Zone" description="FT Cyber Zone" type="atom" id="hmqtstb" sortColumn="time" xmlUrl="https://ftconnect.blogspot.co.id/atom.xml" htmlUrl="http://ftconnect.blogspot.com/" updateInterval="-1" collapsed="true"/>
+      <outline title="DivSec" text="DivSec" description="DivSec" type="atom" id="aabxfha" sortColumn="time" xmlUrl="http://firmantkjnesaba2016.blogspot.co.id/atom.xml" htmlUrl="http://www.divsec.tk/" updateInterval="-1" collapsed="true"/>
+      <outline title="Linux Tech Indonesia" text="Linux Tech Indonesia" description="Linux Tech Indonesia" type="atom" id="ibssigx" sortColumn="time" xmlUrl="http://linuxtechindonesia.blogspot.co.id/atom.xml" htmlUrl="http://linuxtechindonesia.blogspot.com/" updateInterval="-1" collapsed="true"/>
+      <outline title="Nux Linux" text="Nux Linux" description="Nux Linux" type="atom" id="ejbepoc" sortColumn="time" xmlUrl="https://nuxlinux.blogspot.co.id/atom.xml" htmlUrl="http://nuxlinux.blogspot.com/" updateInterval="-1" collapsed="true"/>
+      <outline title="Ojek IT" text="Ojek IT" description="Ojek IT" type="atom" id="owumuor" sortColumn="time" xmlUrl="http://www.kunaifi.com/atom.xml" htmlUrl="http://www.kunaifi.com/" updateInterval="-1" collapsed="true"/>
+      <outline title="DLX" text="DLX" description="DLX" type="atom" id="chbptmo" sortColumn="time" xmlUrl="http://www.linux-dlx.org/atom.xml" htmlUrl="http://www.linux-dlx.org/" updateInterval="-1" collapsed="true"/>
+      <outline title="MASTAH" text="MASTAH" description="MASTAH" type="atom" id="lhmjwfn" sortColumn="time" xmlUrl="http://www.mas-tah.com/atom.xml" htmlUrl="http://www.mas-tah.com/" updateInterval="-1" collapsed="true"/>
+      <outline title="indomangga.web.id" text="indomangga.web.id" description="indomangga.web.id" type="atom" id="jcuaowv" sortColumn="time" xmlUrl="http://www.indomangga.web.id/atom.xml" htmlUrl="http://www.indomangga.web.id/" updateInterval="-1" collapsed="true"/>
+      <outline title="Heureuy Tech" text="Heureuy Tech" description="Heureuy Tech" type="rss" id="mskdmvb" sortColumn="time" xmlUrl="https://heureuytech.web.id/feed/" htmlUrl="https://heureuytech.web.id" updateInterval="-1" collapsed="true"/>
+      <outline title="KAMPUNG LINUX JATISARI" text="KAMPUNG LINUX JATISARI" description="KAMPUNG LINUX JATISARI" type="rss" id="kvgexms" sortColumn="time" xmlUrl="https://kampunglinuxjatisari.wordpress.com/feed" htmlUrl="https://kampunglinuxjatisari.wordpress.com" updateInterval="-1" collapsed="true"/>
+      <outline title="Indonesia Satu" text="Indonesia Satu" description="Indonesia Satu" type="atom" id="otatgmu" sortColumn="time" xmlUrl="https://indomesa.blogspot.co.id/atom.xml" htmlUrl="http://indomesa.blogspot.com/" updateInterval="-1" collapsed="true"/>
+      <outline title="Lampu Linux" text="Lampu Linux" description="Lampu Linux" type="atom" id="erailnf" sortColumn="time" xmlUrl="http://lampulinux.blogspot.co.id/atom.xml" htmlUrl="http://lampulinux.blogspot.com/" updateInterval="-1" collapsed="true"/>
+      <outline title="Linux OS Indonesia" text="Linux OS Indonesia" description="Linux OS Indonesia" type="atom" id="rodoydp" sortColumn="time" xmlUrl="http://www.linuxosindonesia.com/atom.xml" htmlUrl="http://www.linuxosindonesia.com/" updateInterval="-1" collapsed="true"/>
+      <outline title="Edho Nur || BLC TELKOM" text="Edho Nur || BLC TELKOM" description="Edho Nur || BLC TELKOM" type="atom" id="wyqusoq" sortColumn="time" xmlUrl="http://edhoname.blogspot.co.id/atom.xml" htmlUrl="http://edhoname.blogspot.com/" updateInterval="-1" collapsed="true"/>
+      <outline title="IT GEEK" text="IT GEEK" description="IT GEEK" type="rss" id="fjmdphd" sortColumn="time" xmlUrl="http://yodha.web.id/feed" htmlUrl="http://yodha.web.id" updateInterval="-1" collapsed="true"/>
+      <outline title="SUDOWAY.ID" text="SUDOWAY.ID" description="SUDOWAY.ID" type="rss" id="densbdu" sortColumn="time" xmlUrl="https://www.sudoway.id/feed" htmlUrl="https://www.sudoway.id" updateInterval="-1" collapsed="true"/>
+      <outline title="LinuxSec - Indonesian Linux Portal" text="LinuxSec - Indonesian Linux Portal" description="LinuxSec - Indonesian Linux Portal" type="atom" id="ijxiqti" sortColumn="time" xmlUrl="http://www.linuxsec.org/atom.xml" htmlUrl="http://www.linuxsec.org/" updateInterval="-1" collapsed="true"/>
+    </outline>
+    <outline title="Important" text="Important" description="Important" type="vfolder" id="ilnqlft" sortColumn="time" matchType="any" collapsed="true">
+      <outline type="rule" text="Flag status" rule="flagged" value="" additive="true"/>
+    </outline>
+  </body>
+</opml>
