@@ -1,6 +1,7 @@
 xenta-artwork-xfce (5.0.2) batik; urgency=medium
 
   * Menambahkan Artwork Baru Xfce Session
+  * Menambhakan Provides xenta-artwork
 
  -- Dindin Hernawan (Xenta OS) <dindin_hernawan@yahoo.com>  Tue, 26 Feb 2019 21:41:46 +0700 
 

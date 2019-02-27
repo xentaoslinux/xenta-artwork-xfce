@@ -12,6 +12,6 @@ Architecture: all
 Depends: xenta-backgrounds-xfce, xenta-artwork-common, xenta-artwork-gnome
 Conflicts : mint-artwork-xfce
 Replaces : mint-artwork-xfce
-Provides: gdm-theme
+Provides: gdm-theme, xenta-artwork
 Description: Paket Base Artwork Desktop Xfce
   Paket Artwork dan Konfigurasi Bawaan Xenta OS edisi Xfce.
