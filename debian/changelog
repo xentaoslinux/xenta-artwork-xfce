@@ -1,3 +1,9 @@
+xenta-artwork-xfce (5.0.4) batik; urgency=medium
+
+  * Pembaharuan Konfigurasi panel ditambahkan pulseaudio
+
+ -- Dindin Hernawan (Xenta OS) <dindin_hernawan@yahoo.com>  Tue, 28 Feb 2019 18:58:46 +0700 
+ 
 xenta-artwork-xfce (5.0.3) batik; urgency=medium
 
   * Pembaharuan Konfigurasi Xfce Terminal
