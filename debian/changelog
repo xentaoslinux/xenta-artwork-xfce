@@ -1,4 +1,10 @@
-xenta-artwork-xfce (5.0.2) batik; urgency=medium
+xenta-artwork-xfce (5.0.3) batik; urgency=medium
+
+  * Pembaharuan Konfigurasi Xfce Terminal
+
+ -- Dindin Hernawan (Xenta OS) <dindin_hernawan@yahoo.com>  Tue, 28 Feb 2019 15:04:46 +0700 
+ 
+ xenta-artwork-xfce (5.0.2) batik; urgency=medium
 
   * Menambahkan Artwork Baru Xfce Session
   * Menambhakan Provides xenta-artwork
