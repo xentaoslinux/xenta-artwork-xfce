@@ -1,3 +1,9 @@
+xenta-artwork-xfce (5.0.5+xentaos2) batik; urgency=medium
+
+  * Pengepakan paket buat rilis "batik" stable
+
+ -- Dindin Hernawan (Xenta OS) <dindin_hernawan@yahoo.com>  Sat, 02 Mar 2019 23:07:10 +0700 
+
 xenta-artwork-xfce (5.0.4) batik; urgency=medium
 
   * Pembaharuan Konfigurasi panel ditambahkan pulseaudio
